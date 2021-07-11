@@ -1,0 +1,21 @@
+.home .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.home .SearchBar {
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .home .toolbar {
+        margin-bottom: 3rem;
+    }
+
+    .home .SearchBar {
+        max-width: 30rem;
+    }
+}
