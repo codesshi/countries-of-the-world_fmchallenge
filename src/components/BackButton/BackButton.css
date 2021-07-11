@@ -1,0 +1,31 @@
+.back-button {
+    display: flex;
+    align-items: center;
+    font-family: 'Nunito Sans';
+    height: 2.5rem;
+    padding: 0 2rem;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.18);
+}
+
+.back-button::before {
+    content: "";
+    width: 1.2rem;
+    height: 1rem;
+    background: url('../../assets/left-arrow.svg');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    margin-right: 0.375rem;
+}
+
+.back-button[data-theme="dark"] {
+    color: white;
+}
+
+.back-button[data-theme="dark"]::before {
+    background: url('../../assets/left-arrow-dark.svg');
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
