@@ -4,6 +4,18 @@ html, body, #root {
   height: 100%;
 }
 
+:root {
+  --primary-color: white;
+  --secondary-color: #FAFAFA;
+  --font-color: black;
+}
+
+.dark-theme {
+  --primary-color: #2B3743;
+  --secondary-color: #202D36;
+  --font-color: white;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
