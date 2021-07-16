@@ -1,0 +1,13 @@
+.more-button {
+    font-family: 'Nunito Sans';
+    height: 2.5rem;
+    padding: 0 2rem;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.18);
+}
+
+.more-button[data-theme="dark"] {
+    color: white;
+}

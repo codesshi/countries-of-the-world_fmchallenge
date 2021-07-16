@@ -6,7 +6,7 @@ export const CountryList = ({data, className = ""}) => {
 
     return (
         <ul className={["country-list", ...classes].join(" ")}>
-            { data.slice(0, 10).map(countryData => <li key={countryData.name}><CountryCard data={countryData} /></li>) }
+            { data.map(countryData => <li key={countryData.name}><CountryCard data={countryData} /></li>) }
         </ul>
     )
 }
