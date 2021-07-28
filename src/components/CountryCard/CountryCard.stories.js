@@ -1,4 +1,5 @@
 import { CountryCard } from "."
+import { useState } from "react"
 import flag from '../../assets/flag.jpg'
 
 export default {
@@ -14,7 +15,16 @@ const args = {
     flag: flag
 }
 
-const Template = args => <div style={{width: "16rem"}}><CountryCard data={args}/></div>
+const Template = (args) => {
+    const [isFullyLoaded, setIsFullyLoaded] = useState(false)
+    const style = {
+        width: "16rem"
+    }
+
+    return (
+        <div style={style}><CountryCard data={args} isReadyCallback={() => setIsFullyLoaded(true)} show={isFullyLoaded} /></div>
+    )
+}
 
 export const Default = Template.bind({})
 Default.args = args
