@@ -9,4 +9,4 @@ export default {
 const Template = args => <CountryList {...args}/>
 
 export const Default = Template.bind({})
-Default.args = {data: data}
+Default.args = {data: data.slice(0, 5)}
