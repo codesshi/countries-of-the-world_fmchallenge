@@ -5,6 +5,9 @@ export default {
     title: 'RegionSelector',
 }
 
-const Template = args => <RegionSelector />;
+const Template = args => <RegionSelector {...args}/>;
 
 export const Default = Template.bind({})
+Default.args = {
+    onRegionSelected: (region) => console.log(`Region selected: ${region}`) 
+}
