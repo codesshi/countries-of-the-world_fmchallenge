@@ -5,15 +5,15 @@ html, body, #root {
 }
 
 :root {
-  --primary-color: white;
-  --secondary-color: #FAFAFA;
-  --font-color: black;
+  --primary-color: hsl(0, 0%, 100%);
+  --secondary-color: hsl(0, 0%, 98%);
+  --font-color: hsl(0, 0%, 0%);
 }
 
 .dark-theme {
-  --primary-color: #2B3743;
-  --secondary-color: #202D36;
-  --font-color: white;
+  --primary-color: hsl(210, 22%, 22%);
+  --secondary-color: hsl(205, 26%, 17%);
+  --font-color: hsl(0, 0%, 100%);
 }
 
 body {
