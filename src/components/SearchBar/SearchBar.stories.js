@@ -5,6 +5,10 @@ export default {
     title: 'SearchBar',
 }
 
-const Template = args => <SearchBar />;
+const Template = args => <SearchBar {...args} />;
 
 export const Default = Template.bind({})
+Default.args = {
+    search: (str) => console.log("search: " + str),
+    reset: () => console.log("reset")
+}
