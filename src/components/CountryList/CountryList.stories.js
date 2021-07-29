@@ -1,9 +1,19 @@
 import { CountryList } from "."
+import { MemoryRouter as Router } from "react-router"
 import data from "../../assets/data.json"
+
+const RouterDecorator = (Story) => {
+    return (
+        <Router>
+            <Story />
+        </Router>
+    )
+}
 
 export default {
     component: CountryList,
-    title: "CountryList"
+    title: "CountryList",
+    decorators: [RouterDecorator]
 }
 
 const Template = args => <CountryList {...args}/>

@@ -1,6 +1,7 @@
 import "./CountryList.css"
 import { CountryCard } from "../CountryCard"
 import { useState, useRef } from "react"
+import { Link } from "react-router-dom";
 
 const arr = Array.from(Array(20), (_, i) => ({ name: `empty-${i}` }));
 
@@ -25,9 +26,19 @@ export const CountryList = ({data, minLengthWhileLoading=10, className = ""}) =>
             setIsFullyLoaded(true)
     }
 
+    const toListItem = (countryData) => {
+        return (
+            <li>
+                <Link to={`/countries/${countryData.alpha3Code}`}>
+                    <CountryCard data={countryData} isReadyCallback={handleIsReady} show={isFullyLoaded} />
+                </Link>
+            </li>
+        )
+    }
+
     return (
         <ul className={["country-list", ...classes].join(" ")}>
-            { list.map(countryData => <li key={countryData.name}><CountryCard data={countryData} isReadyCallback={handleIsReady} show={isFullyLoaded} /></li>) }
+            { list.map(toListItem) }
         </ul>
     )
 }
