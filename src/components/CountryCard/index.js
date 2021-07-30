@@ -36,7 +36,7 @@ export const CountryCard = ({data, isReadyCallback, show}) => {
     const { name, population, region, capital, flag } = data
     const [isLoading, setIsLoading] = useState(true)
     const [isDelayOn, setIsDelayOn] = useState(true)
-    const isReady = !isLoading && !isDelayOn
+    const isReady = !isLoading && !isDelayOn && show
   
     useEffect(() => {
         const timeoutID = setTimeout(() => setIsDelayOn(false), 1000)
@@ -45,7 +45,7 @@ export const CountryCard = ({data, isReadyCallback, show}) => {
     })
 
     useEffect(() => {
-        if(isReady) isReadyCallback()
+        if(!isLoading && !isDelayOn) isReadyCallback()
     })
   
     const handleLoad = () => {
@@ -58,13 +58,13 @@ export const CountryCard = ({data, isReadyCallback, show}) => {
             <img
                 src={flag}
                 alt={"flag of " + name}
-                data-hide={!show}
+                data-hide={!isReady}
                 onLoad={handleLoad}
             />
             )}
-            {!show && <div className="img-shimmer shimmer"></div>}
-            {show && <CardData {...{ name, population, region, capital }} />}
-            {!show && <CardDataShimmer />}
+            {!isReady && <div className="img-shimmer shimmer"></div>}
+            {isReady && <CardData {...{ name, population, region, capital }} />}
+            {!isReady && <CardDataShimmer />}
         </div>
     )
   }
