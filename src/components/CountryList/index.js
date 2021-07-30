@@ -3,7 +3,7 @@ import { CountryCard } from "../CountryCard"
 import { useState, useRef } from "react"
 import { Link } from "react-router-dom";
 
-const arr = Array.from(Array(20), (_, i) => ({ name: `empty-${i}` }));
+const arr = Array.from(Array(20), (_, i) => ({ alpha3Code: `empty-${i}` }));
 
 const fillVoid = (list, minLengthWhileLoading) => {
     if (list.length < minLengthWhileLoading) return [...list, ...arr.slice(list.length, minLengthWhileLoading)];
@@ -28,7 +28,7 @@ export const CountryList = ({data, minLengthWhileLoading=10, className = ""}) =>
 
     const toListItem = (countryData) => {
         return (
-            <li>
+            <li key={countryData.alpha3Code} data-key={countryData.alpha3Code}>
                 <Link to={`/countries/${countryData.alpha3Code}`}>
                     <CountryCard data={countryData} isReadyCallback={handleIsReady} show={isFullyLoaded} />
                 </Link>
