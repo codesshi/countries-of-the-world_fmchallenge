@@ -69,10 +69,15 @@
     gap: 1rem;
 }
 
+.borders a {
+    text-decoration: none;
+}
+
 .borders span {
     padding: 0.5rem 1rem;
     background: var(--primary-color);
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.17);
+    color: var(--font-color);
 }
 
 @media (min-width: 768px) {

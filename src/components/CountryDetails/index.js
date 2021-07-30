@@ -1,4 +1,14 @@
+import { Link } from 'react-router-dom'
 import './CountryDetails.css'
+
+const BordersList = ({borders}) => {
+    return (
+        <dl className="details borders">
+            <dt>Border Countries</dt>
+            <dd>{borders.map(country => <Link key={country.alpha3Code} to={`/countries/${country.alpha3Code}`}><span>{country.name}</span></Link>)}</dd>
+        </dl>
+    )
+}
 
 export const CountryDetails = ({className = "", data = {}}) => {
     const classes = className.split(" ")
@@ -20,9 +30,7 @@ export const CountryDetails = ({className = "", data = {}}) => {
                     <dt>Currencies</dt><dd>{data.currencies.map(currency => currency.name).join(", ")}</dd>
                     <dt>Languages</dt><dd>{data.languages.map(language => language.name).join(", ")}</dd>
                 </dl>
-                <dl className="details borders">
-                    <dt>Border Countries</dt><dd>{data.borders.map(country => <span key={country}>{country}</span>)}</dd>
-                </dl>
+                {data.borders.length > 0 && <BordersList borders={data.borders} />}
             </div>
         </div>
     )
