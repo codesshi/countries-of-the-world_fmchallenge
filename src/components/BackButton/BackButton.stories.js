@@ -8,3 +8,6 @@ export default {
 const Template = args => <BackButton {...args} />
 
 export const Default = Template.bind({})
+Default.args = {
+    backCallback: () => console.log("BACK")
+}
