@@ -5,7 +5,7 @@ const BordersList = ({borders}) => {
     return (
         <dl className="details borders">
             <dt>Border Countries</dt>
-            <dd>{borders.map(country => <Link key={country.alpha3Code} to={`/countries/${country.alpha3Code}`}><span>{country.name}</span></Link>)}</dd>
+            <dd>{borders.map(country => <Link key={country.alpha3Code} to={`/countries/${country.alpha3Code}`}>{country.name}</Link>)}</dd>
         </dl>
     )
 }
