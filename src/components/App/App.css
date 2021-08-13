@@ -16,9 +16,18 @@
   padding-right: 2rem;
 }
 
+.App .content {
+  flex: 1;
+  padding: 3rem 2rem;
+}
+
 @media (min-width: 768px) {
   .App .padding-x {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .App .content {
+      padding: 3rem;
   }
 }

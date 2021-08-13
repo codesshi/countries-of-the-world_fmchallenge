@@ -8,12 +8,14 @@ export default function App() {
         <ThemeProvider>
             <div className="App">
                 <NavBar className="padding-x no-shrink" />
-                <Switch>
-                    <Route exact path="/">
-                    </Route>
-                    <Route exact path="/countries/:code">
-                    </Route>
-                </Switch>
+                <div className="content">
+                    <Switch>
+                        <Route exact path="/">
+                        </Route>
+                        <Route exact path="/countries/:code">
+                        </Route>
+                    </Switch>
+                </div>
             </div>
         </ThemeProvider>
     );
