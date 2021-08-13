@@ -3,5 +3,6 @@
   flex-direction: column;
   font-family: sans-serif;
   height: 100%;
+  background-color: var(--secondary-color);
   overflow-y: auto;
 }
