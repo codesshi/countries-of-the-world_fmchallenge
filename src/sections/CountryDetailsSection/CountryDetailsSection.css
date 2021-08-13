@@ -1,0 +1,13 @@
+.details-section .margin-top {
+    margin-top: 2rem;
+}
+
+.details-section .flex-start {
+    align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+    .margin-top {
+        margin-top: 3rem;
+    }
+}
