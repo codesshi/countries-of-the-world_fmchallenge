@@ -2,6 +2,7 @@ import "./App.css"
 import { NavBar } from "../NavBar"
 import { Switch, Route } from "react-router-dom"
 import { ThemeProvider } from '../../hooks/useTheme'
+import { HomeSection } from "../../sections/HomeSection"
 
 export default function App() {
     return (
@@ -11,6 +12,7 @@ export default function App() {
                 <div className="content">
                     <Switch>
                         <Route exact path="/">
+                            <HomeSection />
                         </Route>
                         <Route exact path="/countries/:code">
                         </Route>
