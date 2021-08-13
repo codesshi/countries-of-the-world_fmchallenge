@@ -1,0 +1,51 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+.home .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.home .SearchBar {
+    flex: 1;
+}
+
+.home .CountryList {
+    margin-top: 2rem;
+}
+
+.home .MoreButton {
+    display: block;
+    margin: 2rem auto;
+    flex: none;
+}
+
+.home .no-match {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    font-family: "Nunito Sans";
+    font-size: 1.25rem;
+    color: var(--font-color);
+}
+
+@media (min-width: 768px) {
+    .home .SearchBar {
+        max-width: 30rem;
+    }
+
+    .home .CountryList {
+        margin-top: 3rem;
+    }
+
+    .home .MoreButton {
+        margin: 3rem auto;
+    }
+}
