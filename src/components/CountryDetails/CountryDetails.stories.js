@@ -33,3 +33,5 @@ NoBorders.args = {
         borders: []
     }
 }
+
+export const Loading = Template.bind({})
