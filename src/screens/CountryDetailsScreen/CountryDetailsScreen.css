@@ -1,9 +1,0 @@
-.CountryDetails {
-    margin-top: 2rem;
-}
-
-@media (min-width: 768px) {
-    .CountryDetails {
-        margin-top: 3rem;
-    }
-}
