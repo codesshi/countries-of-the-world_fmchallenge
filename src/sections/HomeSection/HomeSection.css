@@ -22,7 +22,7 @@
 
 .home .MoreButton {
     display: block;
-    margin: 2rem auto;
+    margin: 2rem auto 0 auto;
     flex: none;
 }
 
@@ -46,6 +46,6 @@
     }
 
     .home .MoreButton {
-        margin: 3rem auto;
+        margin: 3rem auto 0 auto;
     }
 }
