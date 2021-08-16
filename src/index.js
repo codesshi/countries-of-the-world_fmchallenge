@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename="/countries-of-the-world_fmchallenge">
+    <Router basename={process.env.REACT_APP_BASENAME}>
       <App />
     </Router>
   </React.StrictMode>,
