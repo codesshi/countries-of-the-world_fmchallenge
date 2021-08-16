@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/countries-of-the-world_fmchallenge/static/css/main.24e2f39a.chunk.css",
+    "main.js": "/countries-of-the-world_fmchallenge/static/js/main.f0a33b4a.chunk.js",
+    "main.js.map": "/countries-of-the-world_fmchallenge/static/js/main.f0a33b4a.chunk.js.map",
+    "runtime-main.js": "/countries-of-the-world_fmchallenge/static/js/runtime-main.ce99852f.js",
+    "runtime-main.js.map": "/countries-of-the-world_fmchallenge/static/js/runtime-main.ce99852f.js.map",
+    "static/js/2.1195c8f2.chunk.js": "/countries-of-the-world_fmchallenge/static/js/2.1195c8f2.chunk.js",
+    "static/js/2.1195c8f2.chunk.js.map": "/countries-of-the-world_fmchallenge/static/js/2.1195c8f2.chunk.js.map",
+    "static/js/3.a3688a5a.chunk.js": "/countries-of-the-world_fmchallenge/static/js/3.a3688a5a.chunk.js",
+    "static/js/3.a3688a5a.chunk.js.map": "/countries-of-the-world_fmchallenge/static/js/3.a3688a5a.chunk.js.map",
+    "index.html": "/countries-of-the-world_fmchallenge/index.html",
+    "static/css/main.24e2f39a.chunk.css.map": "/countries-of-the-world_fmchallenge/static/css/main.24e2f39a.chunk.css.map",
+    "static/js/2.1195c8f2.chunk.js.LICENSE.txt": "/countries-of-the-world_fmchallenge/static/js/2.1195c8f2.chunk.js.LICENSE.txt",
+    "static/media/RegionSelector.css": "/countries-of-the-world_fmchallenge/static/media/arrow.47dd3692.svg",
+    "static/media/SearchBar.css": "/countries-of-the-world_fmchallenge/static/media/magnifying-glass.d807a5ee.svg",
+    "static/media/BackButton.css": "/countries-of-the-world_fmchallenge/static/media/left-arrow.e8533632.svg",
+    "static/media/ThemeToggle.css": "/countries-of-the-world_fmchallenge/static/media/sun.df1c12ad.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ce99852f.js",
+    "static/js/2.1195c8f2.chunk.js",
+    "static/css/main.24e2f39a.chunk.css",
+    "static/js/main.f0a33b4a.chunk.js"
+  ]
+}
