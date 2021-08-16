@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/countries-of-the-world_fmchallenge/static/css/main.24e2f39a.chunk.css",
-    "main.js": "/countries-of-the-world_fmchallenge/static/js/main.f0a33b4a.chunk.js",
-    "main.js.map": "/countries-of-the-world_fmchallenge/static/js/main.f0a33b4a.chunk.js.map",
+    "main.js": "/countries-of-the-world_fmchallenge/static/js/main.e0fad86a.chunk.js",
+    "main.js.map": "/countries-of-the-world_fmchallenge/static/js/main.e0fad86a.chunk.js.map",
     "runtime-main.js": "/countries-of-the-world_fmchallenge/static/js/runtime-main.ce99852f.js",
     "runtime-main.js.map": "/countries-of-the-world_fmchallenge/static/js/runtime-main.ce99852f.js.map",
     "static/js/2.1195c8f2.chunk.js": "/countries-of-the-world_fmchallenge/static/js/2.1195c8f2.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.ce99852f.js",
     "static/js/2.1195c8f2.chunk.js",
     "static/css/main.24e2f39a.chunk.css",
-    "static/js/main.f0a33b4a.chunk.js"
+    "static/js/main.e0fad86a.chunk.js"
   ]
 }
