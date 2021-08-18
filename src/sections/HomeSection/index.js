@@ -3,58 +3,57 @@ import { useState } from "react"
 import { SearchBar } from "../../components/SearchBar"
 import { RegionSelector } from "../../components/RegionSelector"
 import { CountryList } from "../../components/CountryList"
-import { MoreButton } from "../../components/MoreButton"
 import { useCountryList, useSearch } from "../../hooks/rest-countries-hooks"
+import {useEndOfPageEffect} from "../../hooks/end-of-page"
+
+const filter = region => item => item.region === region
+const filters = {
+    Africa: filter("Africa"),
+    Americas: filter("Americas"),
+    Asia: filter("Asia"),
+    Europe: filter("Europe"),
+    Oceania: filter("Oceania")
+}
 
 const NoMatch = () => {
     return <div className="no-match">No Results</div>
 }
 
-const CountryListAll = ({region, pagination, onLoadMore}) => {
-    const { list, isLoading, err } = useCountryList()
+const CountryListAll = ({region}) => {
+    const { list, err } = useCountryList(filters[region])
+    const [numberOfItems, setNumberOfItems] = useState(20)
 
-    if (isLoading) return <CountryList className="CountryList" data={[]} />;
+    useEndOfPageEffect(() => {
+        setNumberOfItems(numberOfItems + 20)
+    }, numberOfItems < list.length)
+
     if (err) return <NoMatch />
-
-    const newList = filterByRegion(list, region)
-
-    if (newList.length === 0) return <NoMatch />
 
     return (
         <div>
-            <CountryList key="all" className="CountryList" data={newList.slice(0, pagination)} />
-            {(newList.length > pagination) && <MoreButton className="MoreButton" action={onLoadMore} />}
+            <CountryList key="all" className="CountryList" data={list.slice(0, numberOfItems)} />
         </div>
     )
 };
 
-const CountryListSearch = ({ input, region, pagination, onLoadMore}) => {
-    const { list, isSearching, err } = useSearch(input);
+const CountryListSearch = ({ query, region }) => {
+    const { list, isSearching, err } = useSearch(query, filters[region]);
+    const [numberOfItems, setNumberOfItems] = useState(20)
 
-    if (isSearching) return <CountryList className="CountryList" data={[]} />;
-    if (err) return <NoMatch />
+    useEndOfPageEffect(() => {
+        setNumberOfItems(numberOfItems + 20)
+    }, numberOfItems < list.length)
 
-    const newList = filterByRegion(list, region)
-
-    if (newList.length === 0) return <NoMatch />
+    if ((!isSearching && list.length === 0) || err) return <NoMatch />
 
     return (
         <div>
-            <CountryList key={input} className="CountryList" data={newList.slice(0, pagination)} />
-            {(newList.length > pagination) && <MoreButton className="MoreButton" action={onLoadMore} />}
+            <CountryList key={query} className="CountryList" data={list.slice(0, numberOfItems)} />
         </div>
     )
 };
-
-const filterByRegion = (list, region) => {
-    if (region === "UNSELECTED")
-        return list
-
-    return list.filter((country) => country.region === region)
-}
 
 export const HomeSection = ({className=""}) => {
-    const [pagination, setPagination] = useState(20)
     const [activeList, setActiveList] = useState("ALL")
     const [selectedRegion, setSelectedRegion] = useState("UNSELECTED")
     const [inputString, setInputString] = useState("")
@@ -62,17 +61,14 @@ export const HomeSection = ({className=""}) => {
     const handleSearch = (searchString) => {
         setActiveList("SEARCH")
         setInputString(searchString)
-        setPagination(20)
     }
 
     const handleReset = () => {
         setActiveList("ALL")
-        setPagination(20)
     }
 
     const handleFilter = (region) => {
         setSelectedRegion(region)
-        setPagination(20)
     }
 
     const classes = className.split(" ")
@@ -83,8 +79,8 @@ export const HomeSection = ({className=""}) => {
                 <SearchBar className="SearchBar" search={handleSearch} reset={handleReset} />
                 <RegionSelector onRegionSelected={handleFilter} />
             </div>
-            {activeList === "ALL" && <CountryListAll region={selectedRegion} pagination={pagination} onLoadMore={() => setPagination(pagination + 20)} />}
-            {activeList === "SEARCH" && <CountryListSearch input={inputString} region={selectedRegion} pagination={pagination} onLoadMore={() => setPagination(pagination + 20)} />}
+            {activeList === "ALL" && <CountryListAll key={`all-${selectedRegion}`} region={selectedRegion} />}
+            {activeList === "SEARCH" && <CountryListSearch query={inputString} region={selectedRegion} />}
         </section>
     )
 }

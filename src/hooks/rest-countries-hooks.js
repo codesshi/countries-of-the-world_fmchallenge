@@ -6,26 +6,33 @@ import {
     fetchCountryBorders
 } from "../utils/restcountries";
 
-export const useCountryList = () => {
-    const [state, setState] = useState({ isLoading: true });
+export const useCountryList = (filter) => {
+    const [state, setState] = useState({ isLoading: true, list: [] });
 
     useEffect(() => {
         fetchCountryListAll()
             .then((list) => setState({ isLoading: false, list }))
-            .catch((err) => setState({ err }));
+            .catch((err) => setState({ isLoading: false, err, list: [] }));
     }, []);
+
+    if (filter) {
+        return {...state, list: state.list.filter(filter)}
+    }
 
     return state;
 };
 
-export const useSearch = (string) => {
-    const [state, setState] = useState({ isSearching: true });
+export const useSearch = (string, filter) => {
+    const [state, setState] = useState({ isSearching: true, list: [] });
 
     useEffect(() => {
         searchCountryByName(string)
             .then((list) => setState({ isSearching: false, list }))
-            .catch((err) => setState({ err }));
+            .catch((err) => setState({ isSearching: false, err, list: [] }));
     }, [string]);
+
+    if (filter)
+        return {...state, list: state.list.filter(filter)}
 
     return state;
 };
